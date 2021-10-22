@@ -23,6 +23,7 @@ html{
     align-items: center;
     justify-content: flex-end;
     box-shadow: 0 0 25px 0 black;
+    z-index: 2;
 }
 
 #navbar * {
@@ -34,7 +35,7 @@ html{
 }
 
 #navbar li a {
-    font-size: 23px;
+    font-size: 1.8vmin;
     color: white;
     text-decoration: none;
 }
@@ -63,6 +64,7 @@ h1 {
     align-items: center;
     width: 100%;
     height: 100vh;
+    min-width: 900px;
     background-color: #000;
     background-image: linear-gradient(62deg, #3a3d40 0%, #181719 100%);
 }
@@ -76,6 +78,7 @@ h1 {
 .downarrow{
     position: absolute;
     bottom: 0%;
+    z-index: 1;
 }
 /*welcome section*/
 
@@ -85,9 +88,12 @@ h1 {
     background-color: #45567D;
     text-align: center;
     max-width: 100vw;
+    min-width: 900px;
     padding-bottom: 5%;
     padding-top: 40px;
 }
+
+
 
 .projects-grid {
     display: grid;
@@ -131,6 +137,7 @@ h1 {
     padding-top: 15px;
     text-align: center;
     height: 90vh;
+    min-width: 900px;
     display: grid;
     justify-content: center;
     align-content: center;
@@ -178,6 +185,7 @@ h1 {
     align-items: center;
     justify-content: flex-end;
     height: 5vh;
+    min-width: 900px;
 }
 /*footer section*/
 
