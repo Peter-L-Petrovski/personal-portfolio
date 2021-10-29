@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
+:root {
+ --typewriterSpeed: 5s;
+ --typewriterCharacters: 29;
+}
+
+
 * {
     margin:0;
     padding:0;
@@ -52,6 +58,7 @@ body {
 
 h1 {
     font-size: 5rem;
+    position: relative;
 }
 
 
@@ -65,8 +72,9 @@ h1 {
     width: 100%;
     height: 100vh;
     min-width: 900px;
-    background-color: #000;
-    background-image: linear-gradient(62deg, #3a3d40 0%, #181719 100%);
+    /*background-color: #000;
+    background-image: linear-gradient(62deg, #3a3d40 0%, #181719 100%);*/
+    background-color: #3a3d40;
 }
 
 #welcome-section p {
@@ -82,7 +90,6 @@ h1 {
 }
 /*welcome section*/
 
-
 /*projects section*/
 #projects {
     background-color: #45567D;
@@ -92,8 +99,6 @@ h1 {
     padding-bottom: 5%;
     padding-top: 40px;
 }
-
-
 
 .projects-grid {
     display: grid;
@@ -232,3 +237,55 @@ h1 {
     top: -15px;
 } 
 /*contact section bounce effect section*/
+
+/*typewriter animation*/
+#welcome-section h1 {
+    font-family: "Source Code Pro", monospace;
+}
+
+h1::before,
+h1::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+h1::before {
+    background: #3a3d40;
+    animation: typewriter var(--typewriterSpeed) steps(var(--typewriterCharacters)) .8s forwards;
+}
+
+@keyframes typewriter {
+    to { left: 100%;
+    }
+}
+
+@keyframes blink {
+    to {
+        background: transparent;
+    }
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+h1::after {
+    width: .075em;
+    background: white;
+    animation: typewriter var(--typewriterSpeed) steps(var(--typewriterCharacters)) .8s forwards,
+    blink 750ms steps(28) infinite;
+}
+
+.subtitle {
+    opacity: 0;
+    transform: translateY(3rem);
+    animation: fadeInUp 2s ease calc(var(--typewriterSpeed) + 1s) forwards;
+}
+/*typewriter animation*/
